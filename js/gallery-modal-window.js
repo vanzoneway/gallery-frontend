@@ -4,10 +4,10 @@ import {
     CLOSE_BTN_SELECTOR,
     LEFT_ARROW_SELECTOR,
     RIGHT_ARROW_SELECTOR,
+    GALLERY_SELECTOR
 } from './gallery-constants.js';
 
-import {imagesData} from "./main.js";
-
+let imagesData = [];
 let currentImageIndex = 0;
 
 const modal = document.querySelector(MODAL_SELECTOR);
@@ -16,11 +16,32 @@ const closeBtn = document.querySelector(CLOSE_BTN_SELECTOR);
 const leftArrow = document.querySelector(LEFT_ARROW_SELECTOR);
 const rightArrow = document.querySelector(RIGHT_ARROW_SELECTOR);
 
+function updateImagesData() {
+    const gallery = document.querySelector(GALLERY_SELECTOR);
+    if (!gallery) return;
+
+    const images = gallery.querySelectorAll('img');
+
+    imagesData = Array.from(images)
+        .filter(img => img.style.display !== 'none')
+        .map(img => ({
+            urls: {
+                regular: img.src,
+            },
+        }));
+}
+
 export function openModal(index) {
-    currentImageIndex = index;
-    modalImage.src = imagesData[currentImageIndex].urls.regular;
-    modal.style.display = 'flex';
-    document.addEventListener('keydown', handleKeyDown);
+    updateImagesData();
+
+    if (index >= 0 && index < imagesData.length) {
+        currentImageIndex = index;
+        modalImage.src = imagesData[currentImageIndex].urls.regular;
+        modal.style.display = 'flex';
+        document.addEventListener('keydown', handleKeyDown);
+    } else {
+        console.error('Invalid image index');
+    }
 }
 
 export function closeModal() {

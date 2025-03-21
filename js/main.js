@@ -15,7 +15,7 @@ async function init() {
     gallery.addEventListener('click', (e) => {
         if (e.target.tagName === 'IMG') {
             const index = parseInt(e.target.getAttribute('data-index'));
-            openModal(index, imagesData);
+            openModal(index);
         }
     });
 }
