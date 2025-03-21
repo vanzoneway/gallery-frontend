@@ -1,4 +1,3 @@
-export const ACCESS_KEY = '77ivHzidyQPf60w9us-9HaKPH1iCdD-nz2aBuajc9BU';
 export const UNSPLASH_API_URL = 'https://api.unsplash.com/photos/random?count=15';
 export const GALLERY_SELECTOR = '.gallery-section';
 export const MODAL_SELECTOR = '.modal';
