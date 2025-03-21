@@ -31,8 +31,23 @@ function updateImagesData() {
         }));
 }
 
-export function openModal(index) {
+export function openModal(dataIndex) {
     updateImagesData();
+
+    const targetImage = document.querySelector(`img[data-index="${dataIndex}"]`);
+    if (!targetImage) {
+        console.error('Image with the specified data-index not found');
+        return;
+    }
+
+    if (targetImage.style.display === 'none') {
+        console.error('Image is hidden');
+        return;
+    }
+
+    const index = imagesData.findIndex(
+        (imgData) => imgData.urls.regular === targetImage.src
+    );
 
     if (index >= 0 && index < imagesData.length) {
         currentImageIndex = index;
