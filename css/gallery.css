@@ -218,32 +218,51 @@ header {
 .arrow {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%) scale(0.7);
-    text-indent: -999px;
-    overflow: hidden;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    width: 57px;
-    height: 57px;
-    cursor: pointer;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #F17900;
+    border-radius: 50%;
     border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
 }
 
 .arrow:hover {
-    transform: scale(1) translateY(-50%);
+    background-color: #FFFFFFE5;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.arrow::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #333;
+    border-right: 3px solid #333;
 }
 
 .left-arrow {
     left: 20px;
-    background-image: url("../assets/images/buttons/larr.png");
+}
+
+.left-arrow::before {
+    transform: rotate(-135deg);
+    margin-left: 4px;
 }
 
 .right-arrow {
     right: 20px;
-    background-image: url("../assets/images/buttons/rarr.png");
+}
+
+.right-arrow::before {
+    transform: rotate(45deg);
+    margin-right: 4px;
 }
 
 .blur {
@@ -274,7 +293,7 @@ header {
     margin: 0 auto;
 }
 
-.footer-container > div {
+.footer-container > section {
     flex: 1 1 var(--footer-container-flex-basis);
     margin: var(--footer-container-gap);
     display: flex;
@@ -282,7 +301,7 @@ header {
     gap: var(--footer-container-div-gap);
 }
 
-.footer-container h1 {
+.footer-container h3 {
     margin-bottom: var(--footer-container-h1-margin-bottom);
     font-weight: 400;
     font-size: var(--footer-container-h1-font-size);
