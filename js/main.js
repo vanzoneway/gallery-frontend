@@ -1,22 +1,37 @@
 import {fetchImages} from './fetch-images.js';
 import {displayImages} from './display-images.js';
-import {openModal} from './gallery-modal-window.js';
-import {GALLERY_SELECTOR} from './gallery-constants.js';
-import './gallery-search.js';
+import {initModal} from './modal.js';
+import {SEARCH_FORM_ID, SEARCH_INPUT_ID} from './gallery-constants.js';
 
-const gallery = document.querySelector(GALLERY_SELECTOR);
+const searchForm = document.getElementById(SEARCH_FORM_ID);
+const searchInput = document.getElementById(SEARCH_INPUT_ID);
 
-export let imagesData = [];
+let imagesData = [];
+let modalController = null;
+
+modalController = initModal();
+
+async function loadImages(query = '') {
+    try {
+        imagesData = await fetchImages(query);
+
+        modalController.updateImages(imagesData);
+
+        displayImages(imagesData, (index) => {
+            modalController.openModal(index);
+        });
+    } catch (error) {
+        console.error('Error loading images:', error);
+    }
+}
 
 async function init() {
-    imagesData = await fetchImages();
-    displayImages(imagesData);
+    await loadImages();
 
-    gallery.addEventListener('click', (e) => {
-        if (e.target.tagName === 'IMG') {
-            const dataIndex = parseInt(e.target.getAttribute('data-index'));
-            openModal(dataIndex);
-        }
+    searchForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const query = searchInput.value.trim();
+        await loadImages(query);
     });
 }
 

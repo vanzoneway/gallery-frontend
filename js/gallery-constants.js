@@ -1,4 +1,5 @@
-export const UNSPLASH_API_URL = 'https://api.unsplash.com/photos/random?count=15';
+export const UNSPLASH_API_URL = 'https://api.unsplash.com/photos/random?count=16';
+export const UNSPLASH_SEARCH_URL = 'https://api.unsplash.com/search/photos?per_page=16';
 export const GALLERY_SELECTOR = '.gallery-section';
 export const MODAL_SELECTOR = '.modal';
 export const MODAL_IMAGE_ID = 'modal-image';
