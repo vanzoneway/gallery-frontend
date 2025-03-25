@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/gallery.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
@@ -39,8 +40,12 @@
         <div class="modal-content">
             <img id="modal-image" src="" alt="Modal Image">
         </div>
-        <button class="arrow left-arrow"></button>
-        <button class="arrow right-arrow"></button>
+        <button class="arrow left-arrow" aria-label="Previous image">
+            <span></span>
+        </button>
+        <button class="arrow right-arrow" aria-label="Next image">
+            <span></span>
+        </button>
     </div>
 </main>
 

@@ -26,5 +26,3 @@ yarn.lock
 .auto-save/
 
 test-data/
-
-js/unsplash-access-key.js
