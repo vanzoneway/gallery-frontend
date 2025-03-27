@@ -1,4 +1,4 @@
-import {GALLERY_SELECTOR} from './gallery-constants.js';
+import {GALLERY_SELECTOR} from './constants/constants.js';
 
 export function displayImages(imagesData, onImageClick) {
     const gallery = document.querySelector(GALLERY_SELECTOR);

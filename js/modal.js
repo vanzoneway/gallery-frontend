@@ -4,7 +4,7 @@ import {
     CLOSE_BTN_SELECTOR,
     LEFT_ARROW_SELECTOR,
     RIGHT_ARROW_SELECTOR
-} from './gallery-constants.js';
+} from './constants/constants.js';
 
 export function initModal() {
     const modal = document.querySelector(MODAL_SELECTOR);

@@ -1,5 +1,5 @@
-import {UNSPLASH_API_URL, UNSPLASH_SEARCH_URL} from './gallery-constants.js';
-import {ACCESS_KEY} from './unsplash-access-key.js';
+import {UNSPLASH_API_URL, UNSPLASH_SEARCH_URL} from './constants/constants.js';
+import {ACCESS_KEY} from './constants/unsplash-access-key.js';
 
 export async function fetchImages(query = '') {
     try {

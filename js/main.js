@@ -1,7 +1,7 @@
 import {fetchImages} from './fetch-images.js';
 import {displayImages} from './display-images.js';
 import {initModal} from './modal.js';
-import {SEARCH_FORM_ID, SEARCH_INPUT_ID} from './gallery-constants.js';
+import {SEARCH_FORM_ID, SEARCH_INPUT_ID} from './constants/constants.js';
 
 const searchForm = document.getElementById(SEARCH_FORM_ID);
 const searchInput = document.getElementById(SEARCH_INPUT_ID);
@@ -36,9 +36,6 @@ async function init() {
 }
 
 init()
-    .then(() => {
-        console.log('Initialization completed successfully.');
-    })
     .catch((error) => {
         console.error('Initialization failed:', error);
     });
