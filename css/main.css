@@ -155,12 +155,19 @@ header {
 }
 
 .search-input {
+    -moz-appearance: textfield;
     flex: 1;
     padding: var(--space-s) var(--space-m);
     font-size: var(--font-size-xs);
     border: none;
     outline: none;
     background-color: transparent;
+}
+
+.search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
 }
 
 .search-input::placeholder {
@@ -192,16 +199,15 @@ header {
     max-width: var(--gallery-section-max-width);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--space-m);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     padding: var(--space-m);
 }
 
 .gallery-section img {
     width: 100%;
-    height: 100%;
+    height: 240px;
     object-fit: cover;
-    border-radius: var(--space-s);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -228,13 +234,11 @@ header {
     position: relative;
     max-width: var(--modal-content-max-width);
     max-height: var(--modal-content-max-height);
-    border-radius: var(--space-s);
 }
 
 #modal-image {
     max-width: 100%;
     max-height: var(--modal-image-max-height);
-    border-radius: var(--space-s);
 }
 
 .close {
@@ -404,16 +408,4 @@ a:hover {
 .copyright {
     max-width: var(--footer-container-max-width);
     margin: 0 auto;
-}
-
-@media (min-width: 600px) {
-    .gallery-section {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-}
-
-@media (min-width: 900px) {
-    .gallery-section {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
