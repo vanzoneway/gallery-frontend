@@ -1,4 +1,3 @@
-
 export function validateSearchInput(input) {
     const errorElement = document.querySelector('.search-error');
     const allowedSpecialChars = /[!$&*\-=^`|~#%'+/?_{}]/;
