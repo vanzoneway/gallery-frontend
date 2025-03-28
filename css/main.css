@@ -114,7 +114,7 @@ header {
 }
 
 .search-section {
-    margin: var(--space-xxl) 0
+    margin: var(--space-xxl) 0;
 }
 
 .search-section h2 {
@@ -192,6 +192,18 @@ header {
 
 .search-button:hover {
     transform: scale(1.1);
+}
+
+.search-error {
+    margin: var(--space-s) auto;
+    height: var(--space-xxl);
+    width: min(100%, 762px);
+    color: #FF3333;
+    font-size: var(--s);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery-section {
@@ -408,4 +420,74 @@ a:hover {
 .copyright {
     max-width: var(--footer-container-max-width);
     margin: 0 auto;
+}
+
+@media(max-width: 1000px) {
+    .search-section {
+        margin: var(--space-xxl) var(--space-xxxxxl);
+    }
+}
+
+@media(max-width: 1190px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 var(--space-m);
+    }
+
+    .footer-container > section {
+        width: 100%;
+        max-width: 400px;
+        margin: 0;
+        padding: var(--space-s) 0;
+    }
+
+    .footer-container > section:last-child {
+        border-bottom: none;
+    }
+
+    .footer-container h3 {
+        cursor: pointer;
+
+        transition: color 0.3s ease;
+    }
+
+    .footer-container h3:hover {
+        color: #E0A449;
+    }
+
+    .footer-container section:not(.social-block) {
+        flex-basis: 0;
+    }
+
+    .footer-container section:not(.social-block) a {
+        display: none;
+        padding-left: var(--space-s);
+        animation: fadeIn 0.3s ease;
+    }
+
+    .footer-container section:not(.social-block).active a {
+        display: block;
+    }
+
+    .social-block {
+        text-align: left;
+    }
+
+    .social-logos {
+        justify-content: center;
+        margin-bottom: var(--space-m);
+    }
+
+    .copyright {
+        text-align: center;
+        width: 100%;
+        margin-top: var(--space-xl);
+        padding: 0 0 var(--space-xxl) 0;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 }
