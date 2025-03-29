@@ -1,0 +1,10 @@
+export const UNSPLASH_API_URL = 'https://api.unsplash.com/photos/random?count=15';
+export const UNSPLASH_SEARCH_URL = 'https://api.unsplash.com/search/photos?per_page=15';
+export const GALLERY_SELECTOR = '.gallery-section';
+export const MODAL_SELECTOR = '.modal';
+export const MODAL_IMAGE_ID = 'modal-image';
+export const CLOSE_BTN_SELECTOR = '.close';
+export const LEFT_ARROW_SELECTOR = '.left-arrow';
+export const RIGHT_ARROW_SELECTOR = '.right-arrow';
+export const SEARCH_FORM_ID = 'search-form';
+export const SEARCH_INPUT_ID = 'search-input';
